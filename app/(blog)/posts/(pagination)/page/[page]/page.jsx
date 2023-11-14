@@ -1,4 +1,4 @@
-import ArchiveTemplate from "@/components/archive-template";
+import ArchiveTemplate from "@/components/template/archive-template";
 import { getPaginatedPosts } from "@/lib/posts";
 import { notFound } from "next/navigation";
 

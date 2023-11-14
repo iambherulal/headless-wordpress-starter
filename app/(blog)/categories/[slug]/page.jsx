@@ -1,4 +1,4 @@
-import ArchiveTemplate from "@/components/archive-template";
+import ArchiveTemplate from "@/components/template/archive-template";
 import { getCategoryBySlug } from "@/lib/categories";
 import { getPostsByCategoryId } from "@/lib/posts";
 import { notFound } from "next/navigation";

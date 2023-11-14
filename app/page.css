@@ -1,0 +1,58 @@
+.page-content {
+    @apply text-base;
+
+}
+
+.page-content p {
+    @apply text-base leading-7 [&:not(:first-child)]:mt-6;
+
+}
+
+.page-content a {
+    @apply font-medium text-primary underline underline-offset-4;
+}
+
+.page-content blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+}
+
+.page-content h2 {
+    @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+}
+
+.page-content h3 {
+    @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+.page-content ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+}
+
+.wp-block-table table {
+    @apply w-full border-collapse;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+    @apply border px-4 py-2 text-left;
+}
+
+.wp-block-table th {
+    @apply font-bold;
+}
+
+.wp-block-table tr:nth-child(even) {
+    @apply bg-muted;
+}
+
+figure.wp-block-image img {
+    @apply mx-auto rounded-md;
+}
+
+figcaption.wp-element-caption {
+    @apply text-center text-sm text-gray-500 italic;
+}
+
+.categories li:not(:last-child):after {
+    content: ',';
+}

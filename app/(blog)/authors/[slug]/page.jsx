@@ -1,4 +1,4 @@
-import ArchiveTemplate from "@/components/archive-template";
+import ArchiveTemplate from "@/components/template/archive-template";
 import { getCategoryBySlug } from "@/lib/categories";
 import { getPostsByAuthorSlug, getPostsByCategoryId } from "@/lib/posts";
 import { getUserByNameSlug, getUserBySlug } from "@/lib/users";

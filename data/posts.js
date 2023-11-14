@@ -184,7 +184,7 @@ export const QUERY_POSTS_BY_CATEGORY_ID_INDEX = gql`
 export const QUERY_POSTS_BY_CATEGORY_ID_ARCHIVE = gql`
   ${POST_FIELDS}
   query PostsByCategoryId($categoryId: Int!) {
-    posts(where: { categoryId: $categoryId, hasPassword: false }) {
+    posts(where: { categoryId: $categoryId, hasPassword: false }, first: 1000) {
       edges {
         node {
           ...PostFields
@@ -261,7 +261,7 @@ export const QUERY_POSTS_BY_AUTHOR_SLUG_INDEX = gql`
 export const QUERY_POSTS_BY_AUTHOR_SLUG_ARCHIVE = gql`
   ${POST_FIELDS}
   query PostByAuthorSlugArchive($slug: String!) {
-    posts(where: { authorName: $slug, hasPassword: false }) {
+    posts(where: { authorName: $slug, hasPassword: false },first: 1000) {
       edges {
         node {
           ...PostFields

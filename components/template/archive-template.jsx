@@ -1,6 +1,6 @@
 import React from 'react'
-import BlogItem from './blog-Item'
-import { Pagination } from './pagination'
+import BlogItem from '../blog-Item'
+import { Pagination } from '../pagination'
 import Image from 'next/image'
 
 export default function ArchiveTemplate({ posts, pagination, title = "Archive", subtitle, type = "post", author = null }) {
