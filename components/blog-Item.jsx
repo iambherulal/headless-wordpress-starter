@@ -15,16 +15,16 @@ export default function BlogItem({ post }) {
             className="aspect-video w-full rounded-md"
             src={post.featuredImage.mediaDetails.sizes[0].sourceUrl}
             alt={post.title}
-            width={380}
-            height={215}
+            width={300}
+            height={225}
           />
         ) : (
           <Image
             className="aspect-video w-full rounded-md"
             src="/images/placeholder-image.webp"
             alt={post.title}
-            width={380}
-            height={215}
+            width={300}
+            height={225}
           />
         )}
       </Link>

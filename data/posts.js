@@ -40,6 +40,8 @@ export const POST_FIELDS = gql`
       }
     }
     excerpt
+    modified
+    uri
   }
 `;
 

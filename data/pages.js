@@ -30,6 +30,7 @@ export const PAGE_FIELDS = gql`
     slug
     title
     uri
+    modified
   }
 `;
 
