@@ -345,3 +345,11 @@ export const QUERY_POST_PER_PAGE = gql`
     }
   }
 `;
+
+export const QUERY_POST_TITLE = gql`
+query PostTitleByUri($uri: ID!) {
+  post(id: $uri, idType: URI) {
+    title
+  }
+}
+`;

@@ -1,7 +1,14 @@
 import BlogItem from "@/components/blog-Item";
 import { Pagination } from "@/components/pagination";
 import { Button } from "@/components/ui/button";
+import { getPageSEOByUri } from "@/lib/pages";
 import { getPaginatedPosts } from "@/lib/posts";
+import { pageSEODataStructure } from "@/lib/utils";
+
+export const metadata = async () => {
+  const seoData = await getPageSEOByUri("/posts");
+  return pageSEODataStructure(seoData);
+}
 
 export default async function BlogListing() {
   const { posts, pagination } = await getPaginatedPosts({

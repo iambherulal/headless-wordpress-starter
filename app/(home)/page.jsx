@@ -1,11 +1,17 @@
 import FooterCTA from "@/components/cta";
 import { QUERY_PAGE_HOME } from "@/data/pages";
-import { getWPPage } from "@/lib/pages";
+import { getPageSEOByUri, getWPPage } from "@/lib/pages";
 import { getRecentPosts } from "@/lib/posts";
 import Banner from "./components/banner";
 import Blogs from "./components/blogs";
 import Faqs from "./components/faqs";
 import Features from "./components/features";
+import { pageSEODataStructure } from "@/lib/utils";
+
+export const metadata = async () => {
+  const seoData = await getPageSEOByUri("/home");
+  return pageSEODataStructure(seoData);
+}
 
 export default async function Home() {
   const { page } = await getWPPage(QUERY_PAGE_HOME);

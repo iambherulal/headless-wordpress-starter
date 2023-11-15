@@ -128,48 +128,6 @@ export const QUERY_PAGE_BY_URI = gql`
     }
   }
 `;
-
-export const QUERY_PAGE_SEO_BY_URI = gql`
-  query PageSEOByUri($uri: ID!) {
-    page(id: $uri, idType: URI) {
-      id
-      seo {
-        canonical
-        metaDesc
-        metaRobotsNofollow
-        metaRobotsNoindex
-        opengraphAuthor
-        opengraphDescription
-        opengraphModifiedTime
-        opengraphPublishedTime
-        opengraphPublisher
-        opengraphTitle
-        opengraphType
-        readingTime
-        title
-        twitterDescription
-        twitterTitle
-        twitterImage {
-          altText
-          sourceUrl
-          mediaDetails {
-            width
-            height
-          }
-        }
-        opengraphImage {
-          altText
-          sourceUrl
-          mediaDetails {
-            height
-            width
-          }
-        }
-      }
-    }
-  }
-`;
-
 export const QUERY_PAGE_HOME = gql`query homepage {
   page(id: "/home", idType: URI) {
     id
@@ -212,3 +170,52 @@ export const QUERY_PAGE_HOME = gql`query homepage {
     }
   }
 }`;
+
+export const QUERY_PAGE_TITLE = gql`
+query PageByUri($uri: ID!) {
+  page(id: $uri, idType: URI) {
+    title
+  }
+}
+`;
+
+export const QUERY_PAGE_SEO_BY_URI = gql`
+  query PageSEOByUri($uri: ID!) {
+    page(id: $uri, idType: URI) {
+      id
+      seo {
+        canonical
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphAuthor
+        opengraphDescription
+        opengraphModifiedTime
+        opengraphPublishedTime
+        opengraphPublisher
+        opengraphTitle
+        opengraphType
+        readingTime
+        title
+        twitterDescription
+        twitterTitle
+        twitterImage {
+          altText
+          sourceUrl
+          mediaDetails {
+            width
+            height
+          }
+        }
+        opengraphImage {
+          altText
+          sourceUrl
+          mediaDetails {
+            height
+            width
+          }
+        }
+      }
+    }
+  }
+`;

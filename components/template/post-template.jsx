@@ -1,13 +1,11 @@
 import { categoryPathBySlug } from '@/lib/categories';
 import { formatDate } from '@/lib/datetime';
-import { authorPathByName, authorPathBySlug } from '@/lib/users';
-import { Pin, StickyNote } from 'lucide-react';
+import { authorPathBySlug } from '@/lib/users';
+import { Pin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
 
 export default function PostTemplate({ post }) {
-  console.log({ post });
   const { title,
     metaTitle,
     description,
