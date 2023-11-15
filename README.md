@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js WordPress Starter
 
-## Getting Started
+Scaling WordPress with the power of [Next.js](https://nextjs.org/) and the static web!
 
-First, run the development server:
+### Requirements
+
+- [WordPress](https://wordpress.org/)
+- [WPGraphQL](https://www.wpgraphql.com/)
+- Environment variables (see below)
 
 ```bash
-npm run dev
+yarn create next-app -e https://github.com/iambherulal/headless-wordpress-starter
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app -e https://github.com/iambherulal/headless-wordpress-starter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Add an `.env.local` file to the root with the following:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+WORDPRESS_GRAPHQL_ENDPOINT="http://wordpressite.com/graphql"
+WORDPRESS_PLUGIN_SEO=true
+WORDPRESS_FRONT_URL="http://wordpressite.com"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Getting Started
 
-## Learn More
+### What is this and what does it include?
 
-To learn more about Next.js, take a look at the following resources:
+The goal of this project is to take WordPress as a headless CMS and use Next.js to create a static experience without any 3rd party services that can be deployed anywhere.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The hope is to build out as many features as we can to support what's typically expected from an out of the box theme on WordPress. Currently, those features include:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Home (https://headless-wordpress-demo.vercel.app)
+- Pages (https://headless-wordpress-demo.vercel.app/about)
+- Posts (https://headless-wordpress-demo.vercel.app/posts/new-hello-world-2023)
+- Categories (https://headless-wordpress-demo.vercel.app/categories/block)
+- Authors (https://headless-wordpress-demo.vercel.app/authors/iambherulal/)
+- Sitemap (https://headless-wordpress-demo.vercel.app/sitemap.xml)
 
-## Deploy on Vercel
+Additionally, the theme is expected to be SEO friendly and performant out of the box, including:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Unique page titles - (except Categories and Author page)
+- Unique descriptions - (except Categories and Author page)
+- Open Graph tags
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can also optionally enable Yoast SEO plugin support to supercharge your SEO! (See below)
+
+## 🔌 Plugins
+
+### Yoast SEO
+
+The Yoast SEO plugin is partially supported including most major features like metadata and open graph customization.
+
+To enable the plugin, configure `WORDPRESS_PLUGIN_SEO` to be `true` either as an environment variable or within next.config.js.
+
+### Advanced custom fields
+
+I have used Advanced custom fields Pro for home page content you can use free version to setup field.

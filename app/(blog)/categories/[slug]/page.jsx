@@ -1,15 +1,17 @@
 import ArchiveTemplate from "@/components/template/archive-template";
 import { getCategoryBySlug } from "@/lib/categories";
+import { getPageSEOByUri, pagePathBySlug } from "@/lib/pages";
 import { getPostsByCategoryId } from "@/lib/posts";
+import { pageSEODataStructure } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }) {
-    // read route params
-    const slug = pagePathBySlug(params.slug);
+// export async function generateMetadata({ params }) {
+//     // read route params
+//     const slug = pagePathBySlug(params.slug);
 
-    const seoData = await getPageSEOByUri(slug);
-    return pageSEODataStructure(seoData);
-}
+//     const seoData = await getPageSEOByUri(slug);
+//     return pageSEODataStructure(seoData);
+// }
 
 export default async function CategoryArchive({ params }) {
 
