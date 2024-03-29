@@ -7,10 +7,8 @@ import { Button } from "../ui/button";
 import { DropDownMenu } from "./dropdown-menu";
 
 export default function Header() {
-
   const { metadata, headerMenu } = useSite();
   const pathname = usePathname();
-
 
   return (
     <header className="relative w-full border-b bg-white py-2">
@@ -25,7 +23,9 @@ export default function Header() {
               <li key={menu.id}>
                 <Link
                   href={menu.path}
-                  className={`text-sm font-semibold text-gray-800 hover:text-themePrimary ${pathname === menu.path ? 'text-themePrimary' : ''}`}
+                  className={`text-sm font-semibold text-gray-800 hover:text-themePrimary ${
+                    pathname === menu.path ? "text-themePrimary" : ""
+                  }`}
                 >
                   {menu.label}
                 </Link>

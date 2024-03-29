@@ -1,19 +1,17 @@
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/header';
-import { findMenuByLocation, getAllMenus } from '@/lib/menus';
-import { getSiteMetadata } from '@/lib/site';
-import { cn } from '@/lib/utils';
-import ThemeProvider from '@/providers/theme-provider';
+import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
+import { findMenuByLocation, getAllMenus } from "@/lib/menus";
+import { getSiteMetadata } from "@/lib/site";
+import { cn } from "@/lib/utils";
+import ThemeProvider from "@/providers/theme-provider";
 import { Inter as FontSans } from "next/font/google";
-import NextTopLoader from 'nextjs-toploader';
-import './globals.css';
-
+import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-
 
 export const metadata = async () => {
   const seoData = await getSiteMetadata();
@@ -22,11 +20,10 @@ export const metadata = async () => {
       template: `%s | ${seoData?.title}`,
       default: seoData?.title, // a default is required when creating a template
     },
-  }
-}
+  };
+};
 
 export default async function RootLayout({ children }) {
-
   const { menus = [] } = await getAllMenus();
 
   const headerMenu = findMenuByLocation(menus, "HEADER");
@@ -43,15 +40,17 @@ export default async function RootLayout({ children }) {
     storesMenu,
     socialLinks,
     legalMenu,
-    servicesMenu
-  }
+    servicesMenu,
+  };
   const site = { metadata, headerMenu, footerMenu };
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
-      )}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <NextTopLoader
           color="#cc3333"
           initialPosition={0.08}
@@ -69,5 +68,5 @@ export default async function RootLayout({ children }) {
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
